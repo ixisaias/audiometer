@@ -1,0 +1,8 @@
+c:\users\isaias.izquierdo\documents\visual studio 2010\Projects\audioMeter\audioMeter\Server\bin\Debug\LSCodeGeneratorsTask.mcs
+c:\users\isaias.izquierdo\documents\visual studio 2010\Projects\audioMeter\audioMeter\Server\bin\Debug\Application.Server.dll.config
+c:\users\isaias.izquierdo\documents\visual studio 2010\Projects\audioMeter\audioMeter\Server\bin\Debug\Application.Server.dll
+c:\users\isaias.izquierdo\documents\visual studio 2010\Projects\audioMeter\audioMeter\Server\bin\Debug\Application.Server.pdb
+c:\users\isaias.izquierdo\documents\visual studio 2010\Projects\audioMeter\audioMeter\Server\bin\Debug\Application.Common.dll
+c:\users\isaias.izquierdo\documents\visual studio 2010\Projects\audioMeter\audioMeter\Server\obj\Debug\ResolveAssemblyReference.cache
+c:\users\isaias.izquierdo\documents\visual studio 2010\Projects\audioMeter\audioMeter\Server\obj\Debug\Application.Server.dll
+c:\users\isaias.izquierdo\documents\visual studio 2010\Projects\audioMeter\audioMeter\Server\obj\Debug\Application.Server.pdb

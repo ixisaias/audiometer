@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="ApplicationDataObjectContext" StorageEntityContainer="ApplicationDataStore">
+    <EntitySetMapping Name="Pacients">
+      <EntityTypeMapping TypeName="IsTypeOf(ApplicationData.Pacient)">
+        <MappingFragment StoreEntitySet="Pacients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="idno" ColumnName="idno" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="telf" ColumnName="telf" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audiometers">
+      <EntityTypeMapping TypeName="IsTypeOf(ApplicationData.Audiometer)">
+        <MappingFragment StoreEntitySet="Audiometers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="takenon" ColumnName="takenon" />
+          <ScalarProperty Name="audiometer_Pacient" ColumnName="audiometer_Pacient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audiograms">
+      <EntityTypeMapping TypeName="IsTypeOf(ApplicationData.Audiogram)">
+        <MappingFragment StoreEntitySet="Audiograms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="audiogram_Audiometer" ColumnName="audiogram_Audiometer" />
+          <ScalarProperty Name="Ear" ColumnName="Ear" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="Intensity" ColumnName="Intensity" />
+          <ScalarProperty Name="reponse" ColumnName="reponse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

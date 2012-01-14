@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Namespace="ApplicationData" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <Association Name="Audiometer_Pacient1">
+    <End Role="Pacient" Type="ApplicationData.Pacient" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Audiometer" Type="ApplicationData.Audiometer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Audiometer">
+        <PropertyRef Name="audiometer_Pacient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Audiogram_Audiometer1">
+    <End Role="Audiometer" Type="ApplicationData.Audiometer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Audiogram" Type="ApplicationData.Audiogram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Audiometer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Audiogram">
+        <PropertyRef Name="audiogram_Audiometer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Pacient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="fname" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="lname" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="idno" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="dob" Type="DateTime" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="telf" Type="String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="email" Type="String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="createdon" Type="DateTime" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Audiometer" Relationship="ApplicationData.Audiometer_Pacient1" ToRole="Audiometer" FromRole="Pacient" />
+  </EntityType>
+  <EntityType Name="Audiometer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="takenon" Type="DateTime" ConcurrencyMode="Fixed" />
+    <Property Name="audiometer_Pacient" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Pacient" Relationship="ApplicationData.Audiometer_Pacient1" ToRole="Pacient" FromRole="Audiometer" />
+    <NavigationProperty Name="Audiogram" Relationship="ApplicationData.Audiogram_Audiometer1" ToRole="Audiogram" FromRole="Audiometer" />
+  </EntityType>
+  <EntityType Name="Audiogram">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Ear" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Frequency" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Intensity" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="reponse" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="audiogram_Audiometer" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Audiometer" Relationship="ApplicationData.Audiogram_Audiometer1" ToRole="Audiometer" FromRole="Audiogram" />
+  </EntityType>
+  <EntityContainer Name="ApplicationDataObjectContext">
+    <EntitySet Name="Pacients" EntityType="ApplicationData.Pacient" />
+    <EntitySet Name="Audiometers" EntityType="ApplicationData.Audiometer" />
+    <EntitySet Name="Audiograms" EntityType="ApplicationData.Audiogram" />
+    <AssociationSet Name="Audiometer_Pacient1" Association="ApplicationData.Audiometer_Pacient1">
+      <End Role="Pacient" EntitySet="Pacients" />
+      <End Role="Audiometer" EntitySet="Audiometers" />
+    </AssociationSet>
+    <AssociationSet Name="Audiogram_Audiometer1" Association="ApplicationData.Audiogram_Audiometer1">
+      <End Role="Audiometer" EntitySet="Audiometers" />
+      <End Role="Audiogram" EntitySet="Audiograms" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationSchemaChange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityChanges>
+    <EntitySchemaChange IsNew="false" OriginalName="Pacients">
+      <PropertyChanges>
+        <EntityPropertySchemaChange IsNew="false" OriginalName="createdon" OriginalTypeName="Microsoft.LightSwitch:Date?" NewTypeName="Microsoft.LightSwitch:Date" />
+      </PropertyChanges>
+    </EntitySchemaChange>
+    <EntitySchemaChange IsNew="false" OriginalName="Audiometers">
+      <PropertyChanges>
+        <EntityPropertySchemaChange IsNew="false" OriginalName="takenon" OriginalTypeName="Microsoft.LightSwitch:DateTime" NewTypeName="Microsoft.LightSwitch:DateTime?" />
+      </PropertyChanges>
+    </EntitySchemaChange>
+  </EntityChanges>
+</ApplicationSchemaChange>

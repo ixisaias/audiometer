@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{ECD6D718-D1CF-4119-97F3-97C25A0DFBF9}") = "audioMeter", "audioMeter\audioMeter.lsproj", "{9A962F0C-37D4-4630-A796-0947A4C5D719}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{1F8FF581-2979-40E8-ACCE-9FA3E925F882}.0 = {1EBEA119-D327-4C6D-91BC-3CC23F996462}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A962F0C-37D4-4630-A796-0947A4C5D719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A962F0C-37D4-4630-A796-0947A4C5D719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A962F0C-37D4-4630-A796-0947A4C5D719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A962F0C-37D4-4630-A796-0947A4C5D719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0F79B2F-22C0-4667-AE2C-E5CDBAE8F991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0F79B2F-22C0-4667-AE2C-E5CDBAE8F991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0F79B2F-22C0-4667-AE2C-E5CDBAE8F991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F79B2F-22C0-4667-AE2C-E5CDBAE8F991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE90FC39-7E85-46ED-B16F-A121795854A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE90FC39-7E85-46ED-B16F-A121795854A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE90FC39-7E85-46ED-B16F-A121795854A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE90FC39-7E85-46ED-B16F-A121795854A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EBEA119-D327-4C6D-91BC-3CC23F996462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EBEA119-D327-4C6D-91BC-3CC23F996462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EBEA119-D327-4C6D-91BC-3CC23F996462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EBEA119-D327-4C6D-91BC-3CC23F996462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8FF581-2979-40E8-ACCE-9FA3E925F882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8FF581-2979-40E8-ACCE-9FA3E925F882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8FF581-2979-40E8-ACCE-9FA3E925F882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8FF581-2979-40E8-ACCE-9FA3E925F882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F940316F-16D8-470B-A21C-38F46E340952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F940316F-16D8-470B-A21C-38F46E340952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F940316F-16D8-470B-A21C-38F46E340952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F940316F-16D8-470B-A21C-38F46E340952}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

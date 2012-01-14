@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="Pacients" EntityType="ApplicationDataStore.Pacient" store:Type="Tables" Schema="dbo" Table="Pacients" />
+    <EntitySet Name="Audiometers" EntityType="ApplicationDataStore.Audiometer" store:Type="Tables" Schema="dbo" Table="Audiometers" />
+    <EntitySet Name="Audiograms" EntityType="ApplicationDataStore.Audiogram" store:Type="Tables" Schema="dbo" Table="Audiograms" />
+    <AssociationSet Name="Audiometer_Pacient1" Association="ApplicationDataStore.Audiometer_Pacient1">
+      <End Role="Pacient" EntitySet="Pacients" />
+      <End Role="Audiometer" EntitySet="Audiometers" />
+    </AssociationSet>
+    <AssociationSet Name="Audiogram_Audiometer1" Association="ApplicationDataStore.Audiogram_Audiometer1">
+      <End Role="Audiometer" EntitySet="Audiometers" />
+      <End Role="Audiogram" EntitySet="Audiograms" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Pacient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fname" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="lname" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="idno" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="dob" Type="datetime" Nullable="false" />
+    <Property Name="telf" Type="nvarchar" MaxLength="255" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="createdon" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Audiometer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="takenon" Type="datetime" />
+    <Property Name="audiometer_Pacient" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Audiogram">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Ear" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Frequency" Type="int" Nullable="false" />
+    <Property Name="Intensity" Type="int" Nullable="false" />
+    <Property Name="reponse" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="audiogram_Audiometer" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Audiometer_Pacient1">
+    <End Role="Pacient" Type="ApplicationDataStore.Pacient" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Audiometer" Type="ApplicationDataStore.Audiometer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Audiometer">
+        <PropertyRef Name="audiometer_Pacient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Audiogram_Audiometer1">
+    <End Role="Audiometer" Type="ApplicationDataStore.Audiometer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Audiogram" Type="ApplicationDataStore.Audiogram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Audiometer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Audiogram">
+        <PropertyRef Name="audiogram_Audiometer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
